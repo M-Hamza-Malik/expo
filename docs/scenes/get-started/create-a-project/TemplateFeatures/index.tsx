@@ -27,7 +27,7 @@ export function TemplateFeatures() {
             isSelected={selected === 'navigation'}
           />
           <Tab
-            title="Android, iOS, and Web support"
+            title="Android, iOS, and web support"
             onClick={() => setSelected('platforms')}
             isSelected={selected === 'platforms'}
           />
