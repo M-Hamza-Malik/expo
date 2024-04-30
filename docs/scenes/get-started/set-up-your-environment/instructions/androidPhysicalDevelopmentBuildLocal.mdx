@@ -41,8 +41,6 @@ List of devices attached
 8AHX0T32K	device
 ```
 
-> If you see `unauthorized` in the list you will need to run `adb reverse tcp:8081 tcp:8081` and press allow USB debugging on the device.
-
 </Step>
 
 <Step label="3">
@@ -51,4 +49,7 @@ List of devices attached
 Run the following from your terminal:
 
 <Terminal cmd={['$ npx expo run:android']} />
+
+> This command runs a development server after building your app. You can skip running `npx expo start` on the next page.
+
 </Step>
