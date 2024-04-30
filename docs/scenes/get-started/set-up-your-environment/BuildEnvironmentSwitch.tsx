@@ -28,20 +28,28 @@ export function BuildEnvironmentSwitch({ type }: Props) {
     if (isOn) {
       setBuildEnv(type);
 
-      router.replace({
-        query: {
-          ...query,
-          buildEnv: type,
+      router.push(
+        {
+          query: {
+            ...query,
+            buildEnv: type,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
     } else {
       setBuildEnv(null);
 
       const _query = query;
       delete _query.buildEnv;
-      router.replace({
-        query: _query,
-      });
+      router.push(
+        {
+          query: _query,
+        },
+        undefined,
+        { shallow: true }
+      );
     }
   }
 

@@ -31,13 +31,17 @@ export function PlatformAndDeviceForm() {
     setPlatform(platform);
     setDevice(device);
 
-    router.replace({
-      query: {
-        ...query,
-        platform,
-        device,
+    router.push(
+      {
+        query: {
+          ...query,
+          platform,
+          device,
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   }
 
   return (

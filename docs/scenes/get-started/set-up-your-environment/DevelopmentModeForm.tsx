@@ -24,12 +24,16 @@ export function DevelopmentModeForm() {
   function onRadioChange(mode: 'expo-go' | 'development-build') {
     setMode(mode);
 
-    router.replace({
-      query: {
-        ...query,
-        mode,
+    router.push(
+      {
+        query: {
+          ...query,
+          mode,
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   }
 
   return (
