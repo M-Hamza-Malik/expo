@@ -1,0 +1,22 @@
+import { Terminal } from '~/ui/components/Snippet';
+
+import { BuildEnvironmentSwitch } from '../BuildEnvironmentSwitch';
+import AndroidStudioEnvironmentInstructions from './_androidStudioEnvironmentInstructions.mdx';
+import AndroidStudioInstructions from './_androidStudioInstructions.mdx';
+import AndroidEmulatorInstructions from './_androidEmulatorInstructions.mdx';
+
+## Set up an Android device with a development build
+
+<BuildEnvironmentSwitch type="android-studio" />
+
+<AndroidStudioEnvironmentInstructions />
+
+<AndroidStudioInstructions />
+
+<AndroidEmulatorInstructions />
+
+## Running your app on an Android device
+
+Run the following from your terminal:
+
+<Terminal cmd={['$ npx expo run:android']} />

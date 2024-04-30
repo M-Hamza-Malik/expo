@@ -2,13 +2,16 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import AndroidPhysicalDevelopmentBuild from './instructions/androidPhysicalDevelopmentBuild.mdx';
-import AndroidPhysicalDevelopmentBuildAndroidStudio from './instructions/androidPhysicalDevelopmentBuildAndroidStudio.mdx';
+import AndroidPhysicalDevelopmentBuildLocal from './instructions/androidPhysicalDevelopmentBuildLocal.mdx';
 import AndroidPhysicalExpoGo from './instructions/androidPhysicalExpoGo.mdx';
 import AndroidSimulatedDevelopmentBuild from './instructions/androidSimulatedDevelopmentBuild.mdx';
+import AndroidSimulatedDevelopmentBuildLocal from './instructions/androidSimulatedDevelopmentBuildLocal.mdx';
 import AndroidSimulatedExpoGo from './instructions/androidSimulatedExpoGo.mdx';
 import IosPhysicalDevelopmentBuild from './instructions/iosPhysicalDevelopmentBuild.mdx';
+import IosPhysicalDevelopmentBuildLocal from './instructions/iosPhysicalDevelopmentBuildLocal.mdx';
 import IosPhysicalExpoGo from './instructions/iosPhysicalExpoGo.mdx';
 import IosSimulatedDevelopmentBuild from './instructions/iosSimulatedDevelopmentBuild.mdx';
+import IosSimulatedDevelopmentBuildLocal from './instructions/iosSimulatedDevelopmentBuildLocal.mdx';
 import IosSimulatedExpoGo from './instructions/iosSimulatedExpoGo.mdx';
 
 export function DevelopmentEnvironmentInstructions() {
@@ -29,7 +32,7 @@ export function DevelopmentEnvironmentInstructions() {
     query.mode === 'development-build'
   ) {
     if (query.buildEnv === 'android-studio') {
-      return <AndroidPhysicalDevelopmentBuildAndroidStudio />;
+      return <AndroidPhysicalDevelopmentBuildLocal />;
     }
 
     return <AndroidPhysicalDevelopmentBuild />;
@@ -44,6 +47,10 @@ export function DevelopmentEnvironmentInstructions() {
     query.device === 'simulated' &&
     query.mode === 'development-build'
   ) {
+    if (query.buildEnv === 'android-studio') {
+      return <AndroidSimulatedDevelopmentBuildLocal />;
+    }
+
     return <AndroidSimulatedDevelopmentBuild />;
   }
 
@@ -56,6 +63,10 @@ export function DevelopmentEnvironmentInstructions() {
     query.device === 'physical' &&
     query.mode === 'development-build'
   ) {
+    if (query.buildEnv === 'xcode') {
+      return <IosPhysicalDevelopmentBuildLocal />;
+    }
+
     return <IosPhysicalDevelopmentBuild />;
   }
 
@@ -64,6 +75,10 @@ export function DevelopmentEnvironmentInstructions() {
     query.device === 'simulated' &&
     query.mode === 'development-build'
   ) {
+    if (query.buildEnv === 'xcode') {
+      return <IosSimulatedDevelopmentBuildLocal />;
+    }
+
     return <IosSimulatedDevelopmentBuild />;
   }
 

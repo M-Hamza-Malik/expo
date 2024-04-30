@@ -2,14 +2,6 @@ import { Step } from '~/ui/components/Step';
 import { Terminal } from '~/ui/components/Snippet';
 import { Tabs, Tab } from '~/ui/components/Tabs';
 
-import { BuildEnvironmentSwitch } from '../BuildEnvironmentSwitch';
-
-## Set up an Android device with a development build
-
-<BuildEnvironmentSwitch type="android-studio" />
-
-# TODO: !!!
-
 ## Install Node.js, Watchman, and JDK
 
 <Tabs>
@@ -49,8 +41,8 @@ Install OpenJDK distribution called Azul Zulu using Homebrew. This distribution 
 We recommend JDK 17. Run the following commands in a terminal window to install it:
 
 <Terminal
-  cmd={['$ brew tap homebrew/cask-versions', '$ brew install --cask zulu17']}
-  cmdCopy="brew tap homebrew/cask-versions && brew install --cask zulu17"
+  cmd={['$ brew tap homebrew/cask-versions', '$ brew install --cask zulu@17']}
+  cmdCopy="brew tap homebrew/cask-versions && brew install --cask zulu@17"
 />
 
 After you install the JDK, add the `JAVA_HOME` environment variable in **~/.bash_profile** (or **~/.zshrc** if you use Zsh):
@@ -81,10 +73,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
 </Tabs>
 
 </Step>
-
-#### Install and configure Android Studio
-
-Android Studio allows installing Android SDK, Android SDK Platform, and Android Virtual Device. They are required to set up the Android development environment. Follow the [instructions on the Android Studio Emulator](/workflow/android-studio-emulator/) to install these tools.
 
 </Tab>
 
@@ -134,10 +122,6 @@ For SDK 49 and below, install JDK version 11.
 
 </Step>
 
-#### Install and configure Android Studio
-
-Android Studio allows installing Android SDK, Android SDK Platform, and Android Virtual Device. They are required to set up the Android development environment. Follow the [instructions on the Android Studio Emulator](/workflow/android-studio-emulator/) to install these tools.
-
 </Tab>
 
 <Tab label="Linux">
@@ -179,10 +163,6 @@ For SDK 49 and below, install JDK version 11. You can download and install [Open
 </Tabs>
 
 </Step>
-
-#### Install and configure Android Studio
-
-Android Studio allows installing Android SDK, Android SDK Platform, and Android Virtual Device. They are required to set up the Android development environment. Follow the [instructions on the Android Studio Emulator](/workflow/android-studio-emulator/) to install these tools.
 
 </Tab>
 
