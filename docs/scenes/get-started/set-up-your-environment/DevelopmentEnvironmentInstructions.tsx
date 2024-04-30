@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import AndroidPhysicalDevelopmentBuild from './instructions/androidPhysicalDevelopmentBuild.mdx';
+import AndroidPhysicalDevelopmentBuildAndroidStudio from './instructions/androidPhysicalDevelopmentBuildAndroidStudio.mdx';
 import AndroidPhysicalExpoGo from './instructions/androidPhysicalExpoGo.mdx';
 import AndroidSimulatedDevelopmentBuild from './instructions/androidSimulatedDevelopmentBuild.mdx';
 import AndroidSimulatedExpoGo from './instructions/androidSimulatedExpoGo.mdx';
@@ -18,6 +19,7 @@ export function DevelopmentEnvironmentInstructions() {
     platform: 'android',
     device: 'physical',
     mode: 'development-build',
+    buildEnv: null,
     ..._query,
   };
 
@@ -26,6 +28,10 @@ export function DevelopmentEnvironmentInstructions() {
     query.device === 'physical' &&
     query.mode === 'development-build'
   ) {
+    if (query.buildEnv === 'android-studio') {
+      return <AndroidPhysicalDevelopmentBuildAndroidStudio />;
+    }
+
     return <AndroidPhysicalDevelopmentBuild />;
   }
 

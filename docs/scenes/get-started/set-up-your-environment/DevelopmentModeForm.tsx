@@ -3,9 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 import { SelectCard } from './SelectCard';
 
-import { Radio } from '~/ui/components/Form/Radio';
-import { RadioGroup } from '~/ui/components/Form/RadioGroup';
-
 export function DevelopmentModeForm() {
   const router = useRouter();
   const { query, isReady } = router;
