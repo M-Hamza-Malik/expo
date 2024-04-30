@@ -39,6 +39,7 @@ export function DevelopmentModeForm() {
         darkImgSrc="/static/images/get-started/expo-go-dark.png"
         title="Expo Go"
         alt="Expo Go"
+        description="Try out app development in a limited sandbox. Great for testing out Expo quickly."
         isSelected={mode === 'expo-go'}
         onClick={() => onRadioChange('expo-go')}
       />
@@ -47,6 +48,7 @@ export function DevelopmentModeForm() {
         darkImgSrc="/static/images/get-started/development-build-dark.png"
         title="Development build"
         alt="Development build"
+        description="Adds developer tools to your app. Include native libraries. Great for production-level projects."
         isSelected={mode === 'development-build'}
         onClick={() => onRadioChange('development-build')}
       />

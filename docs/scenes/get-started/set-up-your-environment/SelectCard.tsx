@@ -1,8 +1,7 @@
-import { Button, ButtonBase, mergeClasses, useTheme } from '@expo/styleguide';
-import { ArrowRightIcon } from '@expo/styleguide-icons';
-import { ReactNode, useEffect, useState } from 'react';
+import { ButtonBase, mergeClasses, useTheme } from '@expo/styleguide';
+import { useEffect, useState } from 'react';
 
-import { H4, HEADLINE } from '~/ui/components/Text';
+import { CALLOUT, HEADLINE } from '~/ui/components/Text';
 
 type Props = {
   imgSrc: string;
@@ -55,6 +54,7 @@ export function SelectCard({
         </div>
         <div className="p-3 text-center flex items-center justify-center flex-col gap-2">
           <HEADLINE className="text-center">{title}</HEADLINE>
+          {description ? <CALLOUT theme="secondary">{description}</CALLOUT> : null}
           <div className="relative">
             <div
               className={mergeClasses(
