@@ -18,7 +18,7 @@ export function DevelopmentEnvironmentInstructions() {
   const query = {
     platform: 'android',
     device: 'physical',
-    mode: 'development-build',
+    mode: 'expo-go',
     buildEnv: null,
     ..._query,
   };

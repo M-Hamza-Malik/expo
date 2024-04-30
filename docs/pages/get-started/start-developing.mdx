@@ -3,12 +3,15 @@ title: Start developing
 description: Make your first change to an Expo project and see it live on your device.
 ---
 
-import { Terminal } from '~/ui/components/Snippet';
+import { Terminal, DiffBlock } from '~/ui/components/Snippet';
 import { Collapsible } from '~/ui/components/Collapsible';
 import ImageSpotlight from '~/components/plugins/ImageSpotlight';
 import { Step } from '~/ui/components/Step';
 import { BoxLink } from '~/ui/components/BoxLink';
 import { BookOpen02Icon, GraduationHat02Icon } from '@expo/styleguide-icons';
+
+import { TemplateFeatures } from '~/scenes/get-started/start-developing/TemplateFeatures';
+import { ProjectStructure } from '~/scenes/get-started/start-developing/ProjectStructure';
 
 <Step label="1">
 ## Start a development server
@@ -45,6 +48,23 @@ If it still doesn't work, it may be due to the router configuration &mdash; this
 
 Open the **app/(tabs)/index.tsx** file in your code editor and make a change.
 
+<DiffBlock
+  raw={`diff --git a/app/(tabs)/index.tsx b/app/(tabs)/index.tsx
+index 45cfa0e..4d1b384 100644
+--- a/app/(tabs)/index.tsx
++++ b/app/(tabs)/index.tsx
+@@ -17,7 +17,7 @@ export default function HomeScreen() {
+       }
+     >
+       <ThemedView style={styles.titleContainer}>
+-        <ThemedText type="title">Welcome!</ThemedText>
++        <ThemedText type="title">Hello World!</ThemedText>
+         <HelloWave />
+       </ThemedView>
+       <ThemedView style={styles.stepContainer}>
+  `}
+/>
+
 <Collapsible summary="Changes not showing up on your device?">
 
 Expo Go is configured by default to automatically reload the app whenever a file is changed, but let's make sure to go over the steps to enable it in case somehow things aren't working.
@@ -63,6 +83,20 @@ Expo Go is configured by default to automatically reload the app whenever a file
 </Collapsible>
 
 </Step>
+
+---
+
+## File structure
+
+Below, you can get familiar with the default project's file structure:
+
+<ProjectStructure />
+
+## Features
+
+The default project template has the following features:
+
+<TemplateFeatures />
 
 ## Next step
 
